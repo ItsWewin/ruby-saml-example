@@ -13,8 +13,7 @@ class SamlController < ApplicationController
     end
 
     request = OneLogin::RubySaml::Authrequest.new
-    redirect_to(request.create(settings))
-
+    redirect_to(request.create(settings, params))
   end
 
   def acs
